@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<extension type="module" version="3.0" client="site" method="upgrade">
+  <name>mod_monmodule</name>
+    <author>Andil - Nicolas</author>
+    <version>3.1.0</version>
+    <description>Gestionnaire du bloc pour les assurances-vie.</description>
+    <files>
+      <filename>mod_monmodule.xml</filename>
+        <filename module="mod_monmodule">mod_monmodule.php</filename>
+        <filename>index.html</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>tmpl/index.html</filename>
+    </files>
+    <config>
+      <fields name="params">
+        <fieldset name="advanced">
+          <field name="moduleclass_sfx" type="text" label="Suffixe de Classe de Module" description="Entrez un Suffixe de Classe de Module" />
+        </fieldset>
+
+        <fieldset name="basic">
+
+          <field name="titre-bloc-assurancevie"  type="text" default="Assurance-vie"
+            label="Titre"
+            description="Titre du bloc assurances-vie"
+            filter="string" />
+          
+          <field type="spacer" name="spacer-1" hr="true" />
+          
+          <!-- Contrat #1 
+               ========== -->
+
+          <field type="spacer" name="spacer-assurance-1" label="&lt;strong&gt;Assurance-vie #1&lt;/strong&gt;" />
+
+          <field name="titre-contrat-1" type="text" default=""
+            label="Titre"
+            description="Titre du contrat"
+            filter="string" />
+
+          <field name="image-contrat-1" label="Image" description="Image du contrat" type="media" directory="stories" />
+
+          <field name="txt-contrat-1" type="textarea" 
+            label="Texte" 
+            description="Texte de contenu du contrat (Taux)" 
+            cols="30" 
+            rows="3"
+            filter="raw" />
+
+          <field name="lien-contrat-1" type="text" default=""
+            label="Lien"
+            description="Lien du contrat"
+            filter="string" />
+
+          <field
+            name="contrat-1"
+            type="radio"
+            class="btn-group btn-group-yesno"
+            default="1"
+            label="Activer"
+            description="Activer ce contrat, le rendre visible">
+            <option
+              value="1">JYES</option>
+            <option
+              value="0">JNO</option>
+          </field>
+
+          <!-- Contrat #2 
+               ========== -->
+
+          <field type="spacer" name="spacer-2" hr="true" />
+
+          <field type="spacer" name="spacer-assurance-2" label="&lt;strong&gt;Assurance-vie #2&lt;/strong&gt;" />
+
+          <field name="titre-contrat-2" type="text" default=""
+            label="Titre"
+            description="Titre du contrat"
+            filter="string" />
+
+          <field name="image-contrat-2" label="Image" description="Image du contrat" type="media" directory="stories" />
+
+          <field name="txt-contrat-2" type="textarea" 
+            label="Texte" 
+            description="Texte de contenu du contrat (Taux)" 
+            cols="30" 
+            rows="3"
+            filter="raw" />
+
+          <field name="lien-contrat-2" type="text" default=""
+            label="Lien"
+            description="Lien du contrat"
+            filter="string" />
+
+          <field
+            name="contrat-2"
+            type="radio"
+            class="btn-group btn-group-yesno"
+            default="1"
+            label="Activer"
+            description="Activer ce contrat, le rendre visible">
+            <option
+              value="1">JYES</option>
+            <option
+              value="0">JNO</option>
+          </field>
+
+        </fieldset>
+      </fields>
+    </config>
+</extension>
