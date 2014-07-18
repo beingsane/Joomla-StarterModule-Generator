@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <extension type="module" version="3.0" client="site" method="upgrade">
-  <name>mod_monmodule</name>
+  <name>*nomModule*</name>
     <author>Andil - Nicolas</author>
     <version>3.1.0</version>
     <description>Gestionnaire du bloc pour les assurances-vie.</description>
     <files>
-      <filename>mod_monmodule.xml</filename>
-        <filename module="mod_monmodule">mod_monmodule.php</filename>
+      <filename>mod_*nomModule*.xml</filename>
+        <filename module="mod_*nomModule*">mod_*nomModule*.php</filename>
         <filename>index.html</filename>
         <filename>tmpl/default.php</filename>
         <filename>tmpl/index.html</filename>

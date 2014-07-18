@@ -1,7 +1,7 @@
 <?php
 /**
  * @package     monsite.site
- * @subpackage  mod_monmodule
+ * @subpackage  mod_*nomModule*
  * 
  * Description : Affiche les contrats d'assurance-vie.
  * Positon     : 3

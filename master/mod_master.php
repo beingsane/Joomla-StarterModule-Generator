@@ -1,10 +1,10 @@
 <?php
 /**
  * @package     monsite.site
- * @subpackage  mod_monmodule
+ * @subpackage  mod_*nomModule* 
  */
 
 defined('_JEXEC') or die;
-require JModuleHelper::getLayoutPath('mod_monmodule', $params->get('layout', 'default'));
+require JModuleHelper::getLayoutPath('mod_*nomModule*', $params->get('layout', 'default'));
 
 ?>
