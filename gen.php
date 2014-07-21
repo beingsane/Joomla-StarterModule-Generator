@@ -2,6 +2,7 @@
 
 // Chargement des presets
 require_once("config.php");
+require_once("functions.php");
 
 // Récupération des valeurs du formulaire
 $nomModule = $_POST['name'];
@@ -25,109 +26,33 @@ $modFilePhp = "mod_".$nomModule.".php";
 $modFileXml = "mod_".$nomModule.".xml";
 $modFileDefault = "tmpl/default.php";
 
-
-
-
-
 // Duplicate des fichier par rapport au "master" exisant.
 // ------------------------------------------------------
-
 
 // mod_master.php
 
 $tmpFilePhp = "tmp/".$modFilePhp;
 $sourceFilePhp = $dossierMaster."mod_master.php";
-$replaceWordName = "*nomModule*";
-  
-  // Ouverture du fichier en r (Ouvre en lecture, et place le pointeur de fichier au début du fichier.)
-  if (!$fichierOuvert = fopen($sourceFilePhp, 'r')) {
-       echo "Impossible d'ouvrir le fichier ($sourceFilePhp)";
-       exit;
-  }
+$wordName = "*nomModule*";
 
-  // Enregistrement du contenu dans une variable    
-  $contentSource = fread($fichierOuvert, filesize($sourceFilePhp));
-
-  // Remplacer le mot recherché par 
-  $content = str_replace($replaceWordName, $nomModule, $contentSource);
-
-  fclose($fichierOuvert);
-
-  // Ouverture du fichier en r+ (Ouvre en lecture et écriture, et place le pointeur de fichier au début du fichier.)
-    if (!$fichierOuvert = fopen($tmpFilePhp, 'x+')) {
-         echo "Impossible d'ouvrir le fichier ($fichier)";
-         exit;
-    }
-  // Ecriture du contenu final
-  file_put_contents($tmpFilePhp, $content);
-
-  // Fermeture du fichier
-  fclose($fichierOuvert);
+creationFichierModule($tmpFilePhp,$sourceFilePhp,$wordName,$nomModule);
 
 
 // mod_master.xml
-$modFileXml = "mod_".$nomModule.".xml";
-
 
 $tmpFileXml = "tmp/".$modFileXml;
 $sourceFileXml = $dossierMaster."mod_master.xml";
-$replaceWordName = "*nomModule*";
-  
-  // Ouverture du fichier en r (Ouvre en lecture, et place le pointeur de fichier au début du fichier.)
-  if (!$fichierOuvert = fopen($sourceFileXml, 'r')) {
-       echo "Impossible d'ouvrir le fichier ($sourceFileXml)";
-       exit;
-  }
+$wordName = "*nomModule*";
 
-  // Enregistrement du contenu dans une variable    
-  $contentSource = fread($fichierOuvert, filesize($sourceFileXml));
-
-  // Remplacer le mot recherché par 
-  $content = str_replace($replaceWordName, $nomModule, $contentSource);
-
-  fclose($fichierOuvert);
-
-  // Ouverture du fichier en r+ (Ouvre en lecture et écriture, et place le pointeur de fichier au début du fichier.)
-    if (!$fichierOuvert = fopen($tmpFileXml, 'x+')) {
-         echo "Impossible d'ouvrir le fichier ($fichier)";
-         exit;
-    }
-  // Ecriture du contenu final
-  file_put_contents($tmpFileXml, $content);
-
-  // Fermeture du fichier
-  fclose($fichierOuvert);
+creationFichierModule($tmpFileXml,$sourceFileXml,$wordName,$nomModule);
 
 
 // default.php
 $tmpFileDefault = "tmp/default.php";
 $sourceFileDefault = $dossierMaster."/tmpl/default.php";
-$replaceWordName = "*nomModule*";
+$wordName = "*nomModule*";
   
-  // Ouverture du fichier en r (Ouvre en lecture, et place le pointeur de fichier au début du fichier.)
-  if (!$fichierOuvert = fopen($sourceFileDefault, 'r')) {
-       echo "Impossible d'ouvrir le fichier ($sourceFileDefault)";
-       exit;
-  }
-
-  // Enregistrement du contenu dans une variable    
-  $contentSource = fread($fichierOuvert, filesize($sourceFileDefault));
-
-  // Remplacer le mot recherché par 
-  $content = str_replace($replaceWordName, $nomModule, $contentSource);
-
-  fclose($fichierOuvert);
-
-  // Ouverture du fichier en r+ (Ouvre en lecture et écriture, et place le pointeur de fichier au début du fichier.)
-    if (!$fichierOuvert = fopen($tmpFileDefault, 'x+')) {
-         echo "Impossible d'ouvrir le fichier ($tmpFileDefault)";
-         exit;
-    }
-  // Ecriture du contenu final
-  file_put_contents($tmpFileDefault, $content);
-
-  // Fermeture du fichier
-  fclose($fichierOuvert);
+creationFichierModule($tmpFileDefault,$sourceFileDefault,$wordName,$nomModule);
 
 
 // Zip des fichiers dupliqué
@@ -151,6 +76,6 @@ $_SESSION['name'] = $_POST['name'];
 
 
 // Une fois le script executé on redirige vers l'accueil
-// header ("location: index.php");
+header ("location: index.php");
 
 ?>
