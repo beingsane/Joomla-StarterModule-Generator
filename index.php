@@ -4,7 +4,7 @@
 
 	<head>
 		<meta charset="utf-8" />
-		<title>Joomla Module Generator</title>
+		<title>Joomla Module Generator - v1</title>
 
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="Slim HTML/CSS est un framework responsive, léger, et pret à l'emploi." />
