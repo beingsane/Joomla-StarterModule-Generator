@@ -40,7 +40,7 @@
 					
 					<div class="cols-row">
 						<div class="col-100 centered">
-							<h1>Joomla Module Generator - V1</h1>	
+							<h1>Joomla Module Generator</h1>	
 							<h2 class="soustitre">Générer un module prêt à développer</h2>
 						</div>
 					</div>
