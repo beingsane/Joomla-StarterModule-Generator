@@ -19,4 +19,4 @@ Composants et libraries :
 		* Html5shiv.js
 		* Slim CSS Framework
 
-Last update:  2014/07/18		
+Last update:  2015/04/18		
